@@ -2,11 +2,11 @@ extends Node2D
 # v07 composer: Tiled map attic07 + per-frame story controls from a timeline JSON (robot drawing, reminder state,
 # calendar page, dust stage, sunlight, sky, room lamps, sunbeam length, camera). Native 448x288 lit world ->
 # 5x nearest -> smooth overlays (sun shafts, glow, motes, vignette). Rendered with Movie Maker.
-const KIT := "/workspace/robot2d/kit/"
-const V := KIT + "v07/"
-const RF := KIT + "robot09/frames/"
-const V9 := KIT + "v09/"
-const V8 := KIT + "v08/"
+var KIT: String
+var V: String
+var RF: String
+var V9: String
+var V8: String
 const NW := 448
 const NH := 288
 const S := 5
@@ -48,14 +48,16 @@ func add_mat(sub := false) -> CanvasItemMaterial:
 	return m
 
 func _ready() -> void:
-	var mj = JSON.parse_string(FileAccess.get_file_as_string(KIT + "tiled/attic07.json"))
-	for L in mj["layers"]:
-		if L.get("type") == "objectgroup":
-			for o in L["objects"]: O[o["name"]] = o
 	for a in OS.get_cmdline_user_args():
 		if a.begins_with("--mode="): mode = a.substr(7)
 		if a.begins_with("--tl="): tl_file = a.substr(5)
 		if a.begins_with("--start="): start_f = int(a.substr(8))
+	KIT = ProjectSettings.globalize_path("res://").trim_suffix("/").get_base_dir() + "/kit/"
+	V = KIT + "v07/"; RF = KIT + "robot09/frames/"; V9 = KIT + "v09/"; V8 = KIT + "v08/"
+	var mj = JSON.parse_string(FileAccess.get_file_as_string(KIT + "tiled/attic07.json"))
+	for L in mj["layers"]:
+		if L.get("type") == "objectgroup":
+			for o in L["objects"]: O[o["name"]] = o
 	TL = JSON.parse_string(FileAccess.get_file_as_string(RF + tl_file))
 	var dj = JSON.parse_string(FileAccess.get_file_as_string(RF + "drawings.json"))
 	for k in dj: draw_info[k] = dj[k]

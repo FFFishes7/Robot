@@ -3,13 +3,14 @@ Every inset is DERIVED from the same scene the wide shows at that frame: the roo
 (+ page-turn fx) + dust + the robot drawing of that frame, cropped around the subject, drawn up at a fixed 3x with a
 grain-keeping upscaler (up3) + 1-px re-detailing, then graded to the actual Godot wide frame (per-class affine fit +
 banded local light) so palette, light and colour temperature match. Props therefore sit exactly where they are in the wide."""
-import json, sys, numpy as np
+import json, os, sys, numpy as np
 from PIL import Image
 from scipy.ndimage import gaussian_filter, zoom
-sys.path.insert(0, "/workspace/robot2d/kit/v10")
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__)))); from paths import KIT, BUILD
+sys.path.insert(0, KIT + "v10")
 import up3 as U
 from detail import detail
-K = "/workspace/robot2d/kit/"; V = K + "v07/"; V8 = K + "v08/"; RF = K + "robot09/frames/"
+K = KIT; V = K + "v07/"; V8 = K + "v08/"; RF = K + "robot09/frames/"
 TL = json.load(open(RF + "timeline10.json")); MK = json.load(open(RF + "marks10.json"))
 Z = 3; OX, OY = 56, 26
 _c = {}
@@ -21,7 +22,7 @@ def over(dst, src):
     dst[..., :3] = (dst[..., :3] * (1 - a) + src[..., :3] * a).astype(np.uint8); dst[..., 3] = np.maximum(dst[..., 3], src[..., 3])
 def G(k, F, d=0): v = TL.get(k); return v[min(F, len(v) - 1)] if v else d
 def wide_path(F):
-    CH = [0, 300, 600, 900, 1200]; S = max(s for s in CH if s <= F); return f"/tmp/w10_{S}/f{6 + F - S:08d}.png"
+    CH = [0, 300, 600, 900, 1200]; S = max(s for s in CH if s <= F); return f"{BUILD}w10_{S}/f{6 + F - S:08d}.png"
 def compose(F, robot=None):
     """native world RGBA + class map (0 room, 1 robot, 2 emissive) at wide frame F"""
     a = L(K + "v09/albedo09.png").copy(); cls = np.zeros(a.shape[:2], np.uint8)

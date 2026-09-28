@@ -70,7 +70,7 @@ No third-party music was used. The reference is still a Bilibili repost (origina
 
 ## v10
 - **Close-up insets, sunset shot, panorama, credits art.** All original and generated in code (`kit/v10/`: `panels10.py`, `up3.py`, `detail.py`, `calfx.py`, `sunset10.py`, `panorama10.py`, `credits10.py`). The insets and the sunset shot are derived from the project's own room and robot art.
-- **Font.** **Pixelify Sans** by Stefie Justprince, SIL Open Font License 1.1 (Google Fonts; system copy at `/usr/share/fonts/truetype/sand-box/google/Pixelify Sans/`). Used unmodified, rendered without antialiasing. Credited in the end credits.
+- **Font.** **Pixelify Sans** by Stefie Justprince, SIL Open Font License 1.1 (Google Fonts; copy with its license at `kit/fonts/`). Used unmodified, rendered without antialiasing. Credited in the end credits.
 - **Style references (not copied, no assets used).** Stardew Valley (ConcernedApe) portraits, title-screen panoramas (day and night) and a fan-made night-beach image, all from images Alan supplied in `refs_games/stardew_closeups/`. The motion reference is still a Bilibili repost (original author unknown).
 - **Lighting.** `godot/shaders/light10.gdshader` and `main10.gd` (warm banded screen-glow pool at night) are original.
 - **Audio.** No new third-party audio. Same Kenney CC0 samples as before. Music is original: an ending music-box return, a final F-major pad and crickets. Mix: `audio/robot_story_10_mix.wav`.

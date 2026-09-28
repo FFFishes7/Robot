@@ -1,8 +1,9 @@
 """End credits at the film's native grain (384x216, 1-px pixel font Pixelify Sans OFL, no antialiasing),
 palette-stepped fades (4 steps, like a game fade) over a dark plum night with a few twinkling stars."""
-import numpy as np
+import os, sys, numpy as np
 from PIL import Image, ImageDraw, ImageFont
-PX = '/usr/share/fonts/truetype/sand-box/google/Pixelify Sans/PixelifySans-VariableFont_wght.ttf'
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__)))); from paths import KIT, BUILD
+PX = KIT + 'fonts/PixelifySans-VariableFont_wght.ttf'
 BG = (22, 13, 22); CREAM = (243, 234, 218); SAL = (247, 164, 126); SALD = (126, 51, 34); MUTE = (168, 146, 122); OUT = (46, 20, 26)
 N = 156
 def text_layer(txt, size, col, shadow=None, outline=None):
@@ -47,7 +48,7 @@ LINES = [("made with", "Aseprite, Godot & Python"),
 N = 168
 BG_arr = np.array(BG, np.float32)
 def head_icon():
-    RF = "/workspace/robot2d/kit/robot09/frames/"
+    RF = KIT + "robot09/frames/"
     im = Image.new('RGBA', (448, 288), (0, 0, 0, 0))
     for s_ in 'ae': im.alpha_composite(Image.open(RF + f"attention_{s_}.png").convert('RGBA'))
     a = np.array(im); box = (227 + 56 - 2, 53 + 26 - 5, 245 + 56 + 3, 66 + 26 + 1)
@@ -95,5 +96,4 @@ def frame(i, backdrop=None):
             a = np.array(im).astype(np.float32); a[..., :3] *= ko / 4.0; im = Image.fromarray(a.astype(np.uint8))
     return im.convert('RGB')
 if __name__ == '__main__':
-    import sys
-    for i in (40, 120): frame(i).resize((1152, 648), Image.NEAREST).save(f'/tmp/v9chk/cred_{i}.png')
+    for i in (40, 120): frame(i).resize((1152, 648), Image.NEAREST).save(f'{BUILD}v9chk/cred_{i}.png')

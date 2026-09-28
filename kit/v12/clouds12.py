@@ -1,7 +1,8 @@
 """v12 cumulus: the v11 lobe geometry (clouds11.bank), shaded against the LOW SUN (from the side, slightly below:
 sun-facing flanks and undersides catch the light, tops fall into cool shade), 5 tones + a sun-side glow rim."""
-import sys, numpy as np
-sys.path.insert(0, '/workspace/robot2d/kit/v11')
+import os, sys, numpy as np
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__)))); from paths import KIT
+sys.path.insert(0, KIT + 'v11')
 from scipy.ndimage import gaussian_filter, generic_filter
 from clouds11 import bank
 def shade(lobes, w, h, L, floor=None):

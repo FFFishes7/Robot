@@ -5,8 +5,9 @@ dead at pano f143 (film 1633) while the parallax layers driven by off kept slidi
 v14: off is a float that ends exactly where the frame top reaches row 0 (96 / 1.25 = 76.8), eased with the same
 smoothstep over the same f100..160, and each layer rounds its own offset once -> every layer moves monotonically and
 everything comes to rest together.  Nothing else changes."""
-import sys, numpy as np
-sys.path.insert(0, '/workspace/robot2d/kit/v13'); sys.path.insert(0, '/workspace/robot2d/kit/v12')
+import os, sys, numpy as np
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__)))); from paths import KIT
+sys.path.insert(0, KIT + 'v13'); sys.path.insert(0, KIT + 'v12')
 import panorama13 as P13, panorama12 as P12
 from panorama12 import N, W, H, CH, HZ, ss, mix, TOP0
 OFF_MAX = TOP0 / 1.25

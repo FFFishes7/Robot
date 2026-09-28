@@ -14,8 +14,9 @@ v15: the camera is only HOLD (exactly still) or MOVE, positions are whole OUTPUT
   * the epilogue is one finite move (50,6) -> (0,0) from W0-10 (where the v13 spring started) to the robot reaching
     the window corner (first 'corner_bl' frame): one direction per axis, no settling tail.
 Framings are the v13 ones.  Everything else in timeline13 (robot, light, ...) is copied unchanged."""
-import json, math, numpy as np
-R9 = "/workspace/robot2d/kit/robot09/frames/"
+import json, math, os, sys, numpy as np
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__)))); from paths import KIT
+R9 = KIT + "robot09/frames/"
 M = json.load(open(R9 + "marks10.json"))["marks"]
 DK, RG = M["dusk"], M["ring"]
 VMIN = 0.5

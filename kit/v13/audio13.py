@@ -1,9 +1,10 @@
 """v08 soundtrack: CC0 Kenney SFX (footsteps, cloth, page flip, clicks, chime, leather) + sounds synthesised here
 (beep, bell ring, servo, clunk, power-down, broom swish, whoosh, wood tock, room tone, birds, crickets, wind)
 + an original music bed composed in code (music box routine motif, pads, piano). Events are placed from the timeline."""
-import json, subprocess, numpy as np, sys
+import json, os, subprocess, numpy as np, sys
 from scipy.signal import butter, sosfilt, fftconvolve
-sys.path.insert(0, __file__.rsplit('/', 1)[0])
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__)))); from paths import ROOT
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import edl13 as edl10
 SR = 48000; FPS = 24
 NOUT = edl10.total(); DUR = NOUT / FPS + 1.0
@@ -11,7 +12,7 @@ L = np.zeros(int(DUR * SR)); R = np.zeros_like(L)          # SFX bus
 ML = np.zeros_like(L); MR = np.zeros_like(L)              # music bus
 AL = np.zeros_like(L); AR = np.zeros_like(L)              # ambience bus
 rng = np.random.RandomState(8)
-K1 = "/workspace/robot2d/audio/src/kenney_interface-sounds/Audio/"; K2 = "/workspace/robot2d/audio/src/kenney_rpg-audio/Audio/"
+K1 = ROOT + "audio/src/kenney_interface-sounds/Audio/"; K2 = ROOT + "audio/src/kenney_rpg-audio/Audio/"
 def load(p, rate=1.0):
     raw = subprocess.run(["ffmpeg", "-v", "error", "-i", p, "-ac", "1", "-ar", str(int(SR / rate)), "-f", "f32le", "-"], capture_output=True).stdout
     return np.frombuffer(raw, np.float32).astype(np.float64)
@@ -209,7 +210,7 @@ pk = max(np.max(np.abs(mixL)), np.max(np.abs(mixR))); g = 0.89 / pk
 mixL *= g; mixR *= g
 st = np.stack([mixL, mixR], 1)[: int(T_end * SR)].astype(np.float32)
 import wave
-with wave.open("/workspace/robot2d/audio/robot_story_13_mix.wav", "wb") as w:
+with wave.open(ROOT + "audio/robot_story_13_mix.wav", "wb") as w:
     w.setnchannels(2); w.setsampwidth(2); w.setframerate(SR); w.writeframes((np.clip(st, -1, 1) * 32767).astype(np.int16).tobytes())
 rms = np.sqrt(np.mean(st ** 2)); print("mix", round(T_end, 2), "s peak gain", round(g, 3), "rms dBFS", round(20 * np.log10(rms), 1),
       {k: round(v, 2) for k, v in dict(task=T_task, night=T_night, cal=T_cal, day2=T_day2, dusk=T_dusk, face=T_face, ring=T_ring, click=T_click, epi=T_epi).items()})

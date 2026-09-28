@@ -3,8 +3,9 @@ moment -- window 1 with its curtains and brass rod, the bookshelf at left, the t
 him sitting on it (the actual sit drawings of the timeline). The glass is redrawn at the 1:1 inset grain with the SAME
 band design as the wide window (indigo+stars / violet / rose / coral / peach / bright horizon line), coloured per frame
 from the Godot wide (LUT grade), plus scalloped band edges, thin cloud wisps, twinkle, a horizon halo and two tiny birds."""
-import sys, json, numpy as np
-sys.path.insert(0, '/workspace/robot2d/kit/v10')
+import os, sys, json, numpy as np
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__)))); from paths import KIT, BUILD
+sys.path.insert(0, KIT + 'v10')
 import panels10 as P
 from PIL import Image
 REG = (44, 14, 172, 86)                      # Lua; 128x72 -> 384x216 at 3x
@@ -105,9 +106,9 @@ def shot(F, j):
 if __name__ == '__main__':
     a, b = P.MK["panels"]["sunset"]
     if len(sys.argv) > 1 and sys.argv[1] == 'all':
-        import os; os.makedirs('/tmp/s10', exist_ok=True)
-        for F in range(a, b): Image.fromarray(shot(F, F - a)).save(f'/tmp/s10/{F}.png')
+        os.makedirs(BUILD + 's10', exist_ok=True)
+        for F in range(a, b): Image.fromarray(shot(F, F - a)).save(f'{BUILD}s10/{F}.png')
         print("sunset", a, b)
     else:
         for F in (a + 10, a + 90):
-            Image.fromarray(shot(F, F - a)).resize((1920, 1080), Image.NEAREST).save(f'/tmp/v9chk/sunset_{F}.png')
+            Image.fromarray(shot(F, F - a)).resize((1920, 1080), Image.NEAREST).save(f'{BUILD}v9chk/sunset_{F}.png')

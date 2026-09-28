@@ -27,8 +27,11 @@ Godot renders `world.position = -(cam*5).round()`, so the camera lands on OUTPUT
   (`kit/v14/grid_check.py` will flag them); holds are on the grid. This is what keeps the pans smooth.
 - Night panorama tilt: v14's `panorama14` (layers stop together at the top) is kept; it was already on the native
   grid in v13 and v14 and is not a source of the v14 stutter.
-- `kit/robot10/render15.sh` (Godot wide renders from timeline15 to /tmp/w15_*), `kit/v15/assemble15.py` (close-up
-  sampler reads timeline15 and the w15 renders). Close-up crops are identical to v13.
+- `kit/v15/render15.py` (Godot wide renders from timeline15 to build/w15_*, Windows or Linux; checks every chunk for
+  frames that repeat although the timeline changed), `kit/v15/assemble15.py` (makes the page-turn patches, then the
+  close-up sampler reads timeline15 and the w15 renders). Close-up crops are identical to v13.
+- Everything the v15 build reads or writes is inside the repository (`kit/paths.py`; renders in `build/`, Pixelify Sans
+  in `kit/fonts/`); `godot/main12.gd` finds `kit/` from the project location.
 - Audio, cut and timing identical to v13 (`audio/robot_story_13_mix.wav`, 1826 frames).
 
 ## Check

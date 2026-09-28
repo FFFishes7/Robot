@@ -2,8 +2,9 @@
 end), redrawn layers: clean many-step banded sky (no checker rows), shaded cumulus banks (clouds11), organic ridge
 rows with atmospheric perspective (hills11b + colour11), leaf-stamp foliage corners without floating twigs.
 Sun, stars, Milky Way and moon are kept from v10. 1-px grain at 384x216."""
-import sys, numpy as np
-sys.path.insert(0, '/workspace/robot2d/kit/v11'); sys.path.insert(0, '/workspace/robot2d/kit/v10')
+import os, sys, numpy as np
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__)))); from paths import KIT
+sys.path.insert(0, KIT + 'v11'); sys.path.insert(0, KIT + 'v10')
 import panorama10 as P10
 from panorama10 import W, H, CH, N, HZ, ss, mix, shade, CRED_BG
 import clouds11 as CL, hills11b as HB, colour11 as C11

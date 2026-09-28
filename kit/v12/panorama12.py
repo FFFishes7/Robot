@@ -4,8 +4,9 @@ Framed high: sky ~70% of the frame, the hills a low band. Richer banded sky buil
 undersides, violet tops, glow rims), green vegetated ridge rows (yellow-green lit faces, orange crest rims,
 teal/violet shade, hazy far rows), leafy corner trees built from many small leaf clumps. Dusk/night: stars,
 Milky Way, moon (v10/v11), moonlit clouds, muted teal hills. 1-px grain, no dither rows, no smoothing."""
-import sys, numpy as np
-sys.path.insert(0, '/workspace/robot2d/kit/v12'); sys.path.insert(0, '/workspace/robot2d/kit/v11'); sys.path.insert(0, '/workspace/robot2d/kit/v10')
+import os, sys, numpy as np
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__)))); from paths import KIT
+sys.path.insert(0, KIT + 'v12'); sys.path.insert(0, KIT + 'v11'); sys.path.insert(0, KIT + 'v10')
 import panorama11 as P11
 from panorama10 import W, H, CH, N, HZ, ss, mix, CRED_BG
 import hills11b as HB

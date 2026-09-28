@@ -1,7 +1,8 @@
 """v13 credits: v10 credits with a cleaned head icon (the crop of the 'attention' drawing caught the broom
 handle at its lower-right; those pixels are removed and the lower-right outline mirrored from the left side)."""
-import sys, numpy as np
-sys.path.insert(0, '/workspace/robot2d/kit/v10')
+import os, sys, numpy as np
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__)))); from paths import KIT
+sys.path.insert(0, KIT + 'v10')
 import credits10 as C
 from PIL import Image
 _orig = C.head_icon

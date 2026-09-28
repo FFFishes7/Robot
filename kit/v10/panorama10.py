@@ -2,8 +2,9 @@
 stars, big fluffy layered clouds framing both sides, rows of ridged hills with crisp lit/shadow slopes, dark foliage in
 the corners), 1-px grain at 384x216. Opening colours = the window-band grade of the wide at the cut frame; it drifts
 into dusk (sun sinks, first stars, village lights) and tilts up into the night sky the credits sit on."""
-import sys, numpy as np
-sys.path.insert(0, '/workspace/robot2d/kit/v10')
+import os, sys, numpy as np
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__)))); from paths import KIT, BUILD
+sys.path.insert(0, KIT + 'v10')
 from PIL import Image
 W, H, CH = 384, 216, 336            # canvas taller than the screen: the camera tilts up at the end
 N = 168
@@ -269,9 +270,8 @@ class Pano:
         return img[:H]
 if __name__ == '__main__':
     import json
-    sys.path.insert(0, '/workspace/robot2d/kit/v10')
     import sunset10 as S
     F0 = int(sys.argv[1]) if len(sys.argv) > 1 else 1430
     lut = S.band_lut(F0); print({k: tuple(int(x) for x in v) for k, v in lut.items()})
     p = Pano(lut)
-    for f in (0, 90, 130, 167): Image.fromarray(p.frame(f)).resize((1152, 648), Image.NEAREST).save(f'/tmp/v9chk/pano_{f}.png')
+    for f in (0, 90, 130, 167): Image.fromarray(p.frame(f)).resize((1152, 648), Image.NEAREST).save(f'{BUILD}v9chk/pano_{f}.png')

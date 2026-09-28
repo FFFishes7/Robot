@@ -1,3 +1,7 @@
 __pycache__/
 *.pyc
 hop_frames/
+build/
+tools/
+*.mp4
+audio/robot_story_13_mix.wav

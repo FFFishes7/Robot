@@ -3,8 +3,9 @@ window of the FINAL wide frame's native pixels (read at 5x5 block centres, grid 
 enlarged x3 by pure nearest neighbour -> 384x216 native-screen (x5 again in assembly). Nothing is redrawn.
 The window is locked per shot in world coords, framed on the subject's union bbox over the whole shot
 (robot sprite alpha + device / calendar), so nothing is cut off and the framing does not jitter."""
-import sys, numpy as np
-sys.path.insert(0, '/workspace/robot2d/kit/v11'); sys.path.insert(0, '/workspace/robot2d/kit/v10')
+import os, sys, numpy as np
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__)))); from paths import KIT
+sys.path.insert(0, KIT + 'v11'); sys.path.insert(0, KIT + 'v10')
 import insets11 as I, panels10 as P
 WN, HN = 128, 72
 # subject boxes (albedo/world coords): device (258-274, 77-89), calendar (245-256, 78-93), robot = per-shot sprite union
