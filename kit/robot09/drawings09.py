@@ -1,8 +1,9 @@
 """All v08 robot drawings (old room coords). Run to write frames/*.png + frames/drawings.json.
 v08: broom leans on the window sill (visible contact + wall shadow), mechanical boot/attention start, lively hesitation,
 arced reach with anticipation + follow-through, longing lean with sagging broom, lean action, climb onto the seat."""
-import json, sys, math
-sys.path.insert(0, __file__.rsplit('/', 1)[0])
+import json, os, sys, math
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
 from robot09 import robot, at_y, DIRS
 CX, BY = 236, 80
 D = {}
@@ -15,9 +16,10 @@ def shifted(p, dx):
     if "broom" in q and not q.get("broom_fixed"): q["broom"] = tuple((a[0] + dx, a[1]) for a in q["broom"])
     return q
 # ---- v09 resting place: bristles on the floor out from the wall base, handle tip against the front face of the window
-# sill (sill = y 59..65, glass above y 58), a clear ~30 deg lean; contact darkening at the tip, cast shadow on the wainscot
-# down to the floor, and a contact pad under the bristles
-Tw, Cw = (250, 61), (241, 75)
+# sill (sill = y 59..65, glass above y 58), a ~16 deg lean; contact darkening at the tip, cast shadow on the wainscot
+# down to the floor, and a contact pad under the bristles. The bristles stand clear of his feet and the whole broom stays
+# left of the armchair, since the robot layer draws over the room.
+Tw, Cw = (255, 61), (251, 75)
 def lean_shadow(T, C):
     L = __import__("robot09").line
     sh = [(x + 2, y + 1) for (x, y) in L(T[0], T[1], C[0], C[1]) if y + 1 <= 70]          # on the wall/sill face
@@ -44,7 +46,7 @@ D["att_left"] = base(eye=("open", -2, 0), ant=(0, -1), **LEAN)
 D["att_nod"] = base(hdy=1, eye=("open", -2, 1), ant=(0, 0), **LEAN)
 D["att_qr"] = base(face="qr", eye=("open", 2, 0), ant=(0, -1), **LEAN)
 D["grab"] = base(face="qr", eye=("open", 2, 0), ant=(-1, 0), hands={"R": at_y(Tw, Cw, 63)}, **LEAN)
-Tg, Cg = (250, 56), (244, 72)
+Tg, Cg = (255, 56), (252, 72)
 D["grab2"] = base(face="qr", eye=("open", 2, 1), ant=(1, 0), broom=(Tg, Cg), hands=held(Tg, Cg))
 D["grab3"] = base(face="qr", eye=("open", 2, 1), ant=(0, 0), broom=(T0, Cs), hands=held(T0))
 # ---------------- sweep cycle (as v07)
@@ -129,11 +131,11 @@ Tb = (CX + 14, BY - 23)
 D["lookback"] = base(face="qr", tilt=-1, hdy=-1, eye=("happy", 2, -2), ant=(0, 0), broom=(Tb, Cs), hands={"R": at_y(Tb, Cs, BY - 17)})
 D["lookback2"] = dict(D["lookback"], ant=(-1, 0), hdy=0)
 # ---------------- lean action: tilt the broom onto the sill (tock), a small settle wobble, let go, a pat, look at it
-for k, (T, C) in enumerate([((246, 59), (236, 74)), ((249, 60), (239, 75)), (Tw, Cw)]):
+for k, (T, C) in enumerate([((249, 59), (243, 74)), ((252, 60), (247, 75)), (Tw, Cw)]):
     D[f"lean{k+1}"] = base(face="qr", eye=("open", 2, 0), ant=[(1, 0), (0, 0), (-1, 0)][k], broom=(T, C), broom_behind=True, hands={"R": at_y(T, C, 63)})
-D["lean_wob"] = base(face="qr", eye=("open", 2, 0), ant=(1, 0), broom=((251, 61), Cw), broom_behind=True, hands={"R": (249, 65)}, extra_sh=lean_shadow((251, 61), Cw), extra_fx=lean_fx((251, 61), Cw))
-D["lean_let"] = base(face="qr", eye=("open", 2, 1), ant=(0, 0), hands={"R": (248, 67)}, **LEAN)
-D["lean_pat"] = base(face="qr", eye=("happy", 2, 0), ant=(0, 1), hdy=1, hands={"R": (245, 69)}, **LEAN)
+D["lean_wob"] = base(face="qr", eye=("open", 2, 0), ant=(1, 0), broom=((256, 61), Cw), broom_behind=True, hands={"R": (255, 65)}, extra_sh=lean_shadow((256, 61), Cw), extra_fx=lean_fx((256, 61), Cw))
+D["lean_let"] = base(face="qr", eye=("open", 2, 1), ant=(0, 0), hands={"R": (255, 67)}, **LEAN)
+D["lean_pat"] = base(face="qr", eye=("happy", 2, 0), ant=(0, 1), hdy=1, hands={"R": (253, 69)}, **LEAN)
 D["lean_look"] = base(face="qr", eye=("soft", 2, 1), ant=(0, 0), **LEAN)
 for f in DIRS: D[f"stand_{f}"] = base(face=f, eye=("soft", {"ql": -2, "l": -2, "qr": 2, "r": 2}.get(f, 0), -1), ant=(0, 0), **LEAN)
 # night: sleep mode, the screen glows faintly (his own light at night)
@@ -202,12 +204,23 @@ D["sit_breath"] = dict(D["sit_lookup"], hdy=0, ant=(0, -1))
 for f in DIRS: D[f"turn_{f}"] = base(face=f)
 for e in ("open", "blink", "wide", "soft", "happy", "squint", "dim", "off"): D[f"expr_{e}"] = base(eye=(e, 0, 0), bulb=(e != "off"))
 for n, (dx, dy) in {"lookL": (-2, 0), "lookR": (2, 0), "lookU": (0, -2)}.items(): D[f"expr_{n}"] = base(eye=("open", dx, dy))
+# a broom held in front of him (drawn over his legs) must also stand in front of his feet: move it down until the bristle
+# base (C.y + 7) is below his feet (by + 1); hands on the handle follow, free hands and a broom behind him stay
+FRONT_DY = 3
+for p in {id(p): p for p in D.values()}.values():
+    if not p.get("broom") or p.get("broom_fixed") or p.get("broom_behind"): continue
+    (T, C) = p["broom"]
+    if C[1] + 7 > p.get("by", BY) + 1: continue
+    T2, C2 = (T[0], T[1] + FRONT_DY), (C[0], C[1] + FRONT_DY)
+    p["hands"] = {k: (at_y(T2, C2, h[1]) if h == at_y(T, C, h[1]) else h) for k, h in p.get("hands", {}).items()}
+    if p.get("puff"): p["puff"] = [(x, y + FRONT_DY, c) for x, y, c in p["puff"]]
+    p["broom"] = (T2, C2)
 if __name__ == "__main__":
     only = sys.argv[1:]
     for n, p in D.items():
         if not only or n in only:
             q = {k: v for k, v in p.items() if k != "broom_fixed"}; robot(q).save(n)
     json.dump({n: {"front": bool(p.get("sit") or p.get("front")), "cx": p.get("cx", CX), "by": p.get("by", BY), "face": p.get("face", "front")} for n, p in D.items()},
-              open(__file__.rsplit('/', 1)[0] + "/frames/drawings.json", "w"), indent=0)
-    json.dump({"WALK_N": WALK_N, "STEPS": STEPS, "WALK_FACE": WALK_FACE}, open(__file__.rsplit('/', 1)[0] + "/frames/walk.json", "w"))
+              open(HERE + "/frames/drawings.json", "w"), indent=0)
+    json.dump({"WALK_N": WALK_N, "STEPS": STEPS, "WALK_FACE": WALK_FACE}, open(HERE + "/frames/walk.json", "w"))
     print(len(D), "drawings, walk", WALK_N)

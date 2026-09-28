@@ -33,7 +33,7 @@ sky.save('sky_dim07.png'); day.save('sky_day07.png')
 # dust: specks scattered over the sweep zone gather leftward into a pile at the dustpan lip, then vanish into the pan
 random.seed(7); N=46
 start=[(random.uniform(222,252),random.uniform(78,87)) for _ in range(N)]
-target=[(random.gauss(226,1.6),random.gauss(82,0.8)) for _ in range(N)]
+target=[(random.gauss(212,1.6),random.gauss(82,0.8)) for _ in range(N)]
 cols=['#a88a68','#c09878','#8e7458','#b8a080','#d8c4a0']
 order=sorted(range(N),key=lambda i:start[i][0])        # the leftmost specks go into the pan first
 STAGES=8

@@ -59,6 +59,7 @@
                  "height":0,
                  "id":1,
                  "name":"pool_1",
+                 "opacity":1,
                  "polygon":[
                         {
                          "x":0,
@@ -93,6 +94,7 @@
                  "height":0,
                  "id":2,
                  "name":"pool_2",
+                 "opacity":1,
                  "polygon":[
                         {
                          "x":0,
@@ -127,6 +129,7 @@
                  "height":0,
                  "id":3,
                  "name":"shaft_1",
+                 "opacity":1,
                  "polygon":[
                         {
                          "x":0,
@@ -155,6 +158,7 @@
                  "height":0,
                  "id":4,
                  "name":"shaft_2",
+                 "opacity":1,
                  "polygon":[
                         {
                          "x":0,
@@ -184,6 +188,7 @@
                  "height":72,
                  "id":5,
                  "name":"lamp",
+                 "opacity":1,
                  "properties":[
                         {
                          "name":"intensity",
@@ -194,7 +199,7 @@
                  "type":"",
                  "visible":true,
                  "width":104,
-                 "x":315,
+                 "x":319,
                  "y":62
                 }, 
                 {
@@ -202,6 +207,7 @@
                  "height":24,
                  "id":6,
                  "name":"lamp_core",
+                 "opacity":1,
                  "properties":[
                         {
                          "name":"intensity",
@@ -212,7 +218,7 @@
                  "type":"",
                  "visible":true,
                  "width":36,
-                 "x":349,
+                 "x":353,
                  "y":84
                 }, 
                 {
@@ -220,6 +226,7 @@
                  "height":52,
                  "id":7,
                  "name":"win_glow_1",
+                 "opacity":1,
                  "properties":[
                         {
                          "name":"intensity",
@@ -238,6 +245,7 @@
                  "height":52,
                  "id":8,
                  "name":"win_glow_2",
+                 "opacity":1,
                  "properties":[
                         {
                          "name":"intensity",
@@ -256,6 +264,7 @@
                  "height":14,
                  "id":9,
                  "name":"robot_glow",
+                 "opacity":1,
                  "properties":[
                         {
                          "name":"intensity",
@@ -274,6 +283,7 @@
                  "height":24,
                  "id":11,
                  "name":"candle",
+                 "opacity":1,
                  "properties":[
                         {
                          "name":"intensity",
@@ -292,6 +302,7 @@
                  "height":60,
                  "id":12,
                  "name":"floorlamp",
+                 "opacity":1,
                  "properties":[
                         {
                          "name":"intensity",
@@ -310,6 +321,7 @@
                  "height":20,
                  "id":13,
                  "name":"floorlamp_core",
+                 "opacity":1,
                  "properties":[
                         {
                          "name":"intensity",
@@ -328,6 +340,7 @@
                  "height":14,
                  "id":14,
                  "name":"radio",
+                 "opacity":1,
                  "properties":[
                         {
                          "name":"intensity",
@@ -346,6 +359,7 @@
                  "height":22,
                  "id":29,
                  "name":"alarm_glow",
+                 "opacity":1,
                  "properties":[
                         {
                          "name":"intensity",
@@ -364,6 +378,7 @@
                  "height":22,
                  "id":15,
                  "name":"string_0",
+                 "opacity":1,
                  "properties":[
                         {
                          "name":"intensity",
@@ -382,6 +397,7 @@
                  "height":22,
                  "id":16,
                  "name":"string_1",
+                 "opacity":1,
                  "properties":[
                         {
                          "name":"intensity",
@@ -400,6 +416,7 @@
                  "height":22,
                  "id":17,
                  "name":"string_2",
+                 "opacity":1,
                  "properties":[
                         {
                          "name":"intensity",
@@ -418,6 +435,7 @@
                  "height":22,
                  "id":18,
                  "name":"string_3",
+                 "opacity":1,
                  "properties":[
                         {
                          "name":"intensity",
@@ -436,6 +454,7 @@
                  "height":22,
                  "id":19,
                  "name":"string_4",
+                 "opacity":1,
                  "properties":[
                         {
                          "name":"intensity",
@@ -454,6 +473,7 @@
                  "height":22,
                  "id":20,
                  "name":"string_5",
+                 "opacity":1,
                  "properties":[
                         {
                          "name":"intensity",
@@ -472,6 +492,7 @@
                  "height":22,
                  "id":21,
                  "name":"string_6",
+                 "opacity":1,
                  "properties":[
                         {
                          "name":"intensity",
@@ -489,6 +510,7 @@
                  "height":0,
                  "id":10,
                  "name":"robot",
+                 "opacity":1,
                  "point":true,
                  "rotation":0,
                  "type":"",
@@ -507,7 +529,7 @@
  "nextobjectid":31,
  "orientation":"orthogonal",
  "renderorder":"right-down",
- "tiledversion":"1.11.0",
+ "tiledversion":"1.12.2",
  "tileheight":16,
  "tilesets":[],
  "tilewidth":16,

@@ -1,5 +1,7 @@
 # v06 map: image layers from Aseprite exports + a "lights" object layer the Godot composer reads.
-import subprocess
+import glob,os,subprocess,sys
+HERE=os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0,os.path.dirname(HERE)); from paths import ROOT
 OX,OY=56,26    # v06 world offset (room grown to 448x288)
 def poly(id,name,pts,props=None):
     pts=[(x+OX,y+OY) for x,y in pts]
@@ -15,8 +17,8 @@ objs=[
  poly(2,'pool_2',[(228,74),(270,74),(228,174),(182,174)],{'intensity':0.55}),
  poly(3,'shaft_1',[(92,30),(124,30),(84,174),(38,174)]),
  poly(4,'shaft_2',[(236,30),(268,30),(228,174),(182,174)]),
- ell(5,'lamp',311,72,52,36,0.5),
- ell(6,'lamp_core',311,70,18,12,0.35),
+ ell(5,'lamp',315,72,52,36,0.5),
+ ell(6,'lamp_core',315,70,18,12,0.35),
  ell(7,'win_glow_1',108,52,40,26,0.3),
  ell(8,'win_glow_2',252,52,40,26,0.3),
  ell(9,'robot_glow',236,72,10,7,0.10),
@@ -40,6 +42,8 @@ tmx=f'''<?xml version="1.0" encoding="UTF-8"?>
 <map version="1.10" tiledversion="1.11.0" orientation="orthogonal" renderorder="right-down" width="28" height="16" tilewidth="16" tileheight="16" infinite="0" nextlayerid="7" nextobjectid="31">
 {il}<objectgroup id="6" name="lights">{''.join(objs)}</objectgroup>
 </map>'''
-open('attic07.tmx','w').write(tmx)
-subprocess.run(['tiled','--export-map','json','attic07.tmx','attic07.json'],env={'QT_QPA_PLATFORM':'offscreen','PATH':'/usr/bin:/bin'},check=True)
+open(os.path.join(HERE,'attic07.tmx'),'w').write(tmx)
+TILED=os.environ.get('TILED') or (glob.glob(ROOT+'tools/tiled/**/tiled.exe',recursive=True)+['tiled'])[0]
+env=dict(os.environ,QT_QPA_PLATFORM='offscreen') if sys.platform.startswith('linux') else None
+subprocess.run([TILED,'--export-map','json','attic07.tmx','attic07.json'],cwd=HERE,env=env,check=True)
 print('ok')
