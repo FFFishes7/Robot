@@ -1,0 +1,119 @@
+{ "frames": [
+   {
+    "filename": "window",
+    "frame": { "x": 569, "y": 0, "w": 61, "h": 53 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 43, "y": 22, "w": 61, "h": 53 },
+    "sourceSize": { "w": 384, "h": 216 },
+    "duration": 100
+   },
+   {
+    "filename": "plant",
+    "frame": { "x": 630, "y": 0, "w": 13, "h": 21 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 82, "y": 50, "w": 13, "h": 21 },
+    "sourceSize": { "w": 384, "h": 216 },
+    "duration": 100
+   },
+   {
+    "filename": "shelf_top",
+    "frame": { "x": 322, "y": 48, "w": 35, "h": 22 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 49, "w": 35, "h": 22 },
+    "sourceSize": { "w": 384, "h": 216 },
+    "duration": 100
+   },
+   {
+    "filename": "shelf_low",
+    "frame": { "x": 357, "y": 48, "w": 35, "h": 22 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 3, "y": 75, "w": 35, "h": 22 },
+    "sourceSize": { "w": 384, "h": 216 },
+    "duration": 100
+   },
+   {
+    "filename": "paper_flower",
+    "frame": { "x": 417, "y": 48, "w": 18, "h": 22 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 231, "y": 19, "w": 18, "h": 22 },
+    "sourceSize": { "w": 384, "h": 216 },
+    "duration": 100
+   },
+   {
+    "filename": "paper_swatch",
+    "frame": { "x": 435, "y": 48, "w": 22, "h": 18 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 255, "y": 15, "w": 22, "h": 18 },
+    "sourceSize": { "w": 384, "h": 216 },
+    "duration": 100
+   },
+   {
+    "filename": "paper_mount",
+    "frame": { "x": 457, "y": 48, "w": 24, "h": 16 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 261, "y": 43, "w": 24, "h": 16 },
+    "sourceSize": { "w": 384, "h": 216 },
+    "duration": 100
+   },
+   {
+    "filename": "paper_list",
+    "frame": { "x": 481, "y": 48, "w": 16, "h": 20 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 289, "y": 29, "w": 16, "h": 20 },
+    "sourceSize": { "w": 384, "h": 216 },
+    "duration": 100
+   },
+   {
+    "filename": "door",
+    "frame": { "x": 522, "y": 0, "w": 47, "h": 95 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 333, "y": 33, "w": 47, "h": 95 },
+    "sourceSize": { "w": 384, "h": 216 },
+    "duration": 100
+   },
+   {
+    "filename": "rug",
+    "frame": { "x": 322, "y": 0, "w": 200, "h": 48 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 96, "y": 160, "w": 200, "h": 48 },
+    "sourceSize": { "w": 384, "h": 216 },
+    "duration": 100
+   },
+   {
+    "filename": "stool",
+    "frame": { "x": 392, "y": 48, "w": 25, "h": 23 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 39, "y": 145, "w": 25, "h": 23 },
+    "sourceSize": { "w": 384, "h": 216 },
+    "duration": 100
+   },
+   {
+    "filename": "paper_balls",
+    "frame": { "x": 0, "y": 0, "w": 322, "h": 52 },
+    "rotated": false,
+    "trimmed": true,
+    "spriteSourceSize": { "x": 20, "y": 162, "w": 322, "h": 52 },
+    "sourceSize": { "w": 384, "h": 216 },
+    "duration": 100
+   }
+ ],
+ "meta": {
+  "app": "http://www.aseprite.org/",
+  "version": "1.3.18.6-dev",
+  "image": "props_sheet.png",
+  "format": "RGBA8888",
+  "size": { "w": 643, "h": 95 },
+  "scale": "1"
+ }
+}

@@ -1,0 +1,7 @@
+local pk = dofile("/workspace/robot2d/kit/aseprite/pk.lua")
+local spr = Sprite(64,64,ColorMode.RGB)
+local l=pk.newlayer(spr,"a"); pk.setT(32,32,0,1,1)
+pk.rrect(-15,-19,14,0,7,"rp3")
+spr:saveCopyAs("/tmp/t2a.png")
+pk.clip(); print(spr.selection.bounds); pk.ell(-3,-8,17,12,"rp2"); pk.unclip()
+spr:saveCopyAs("/tmp/t2b.png")

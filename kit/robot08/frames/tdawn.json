@@ -1,0 +1,1 @@
+{"robot": ["standby"], "alarm": ["idle"], "cam": [[40, 10]], "sun": [0.2], "beam": [0.5], "day": [0.3], "dusk": [0.0], "night": [0.0], "dawn": [1.0], "lamps": [0.1], "amb": [1.0], "dust": [0]}

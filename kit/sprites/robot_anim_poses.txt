@@ -1,0 +1,4 @@
+idle:idle1,idle1,idle2,idle2
+hop:antic,antic,launch,air,air,air,air,fall,land,land,idle1
+look:lookL,lookL,lookL,idle1,lookR,lookR,lookR,tiltR,tiltR,idle1
+expr:sleepy,annoy

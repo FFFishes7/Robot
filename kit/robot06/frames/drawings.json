@@ -1,0 +1,642 @@
+{
+ "sweep1": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "sweep2": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "sweep3": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "sweep4": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "sweep5": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "sweep6": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "sweep7": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "sweep8": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "stop": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "notice": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "antic": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "look1": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "look2": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "look3": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "look4": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "look4_blink": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "startle1": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "startle2": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "turn": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "reach_antic": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "reach": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "press": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "release": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "lookback": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "lookback2": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "turn_front": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "turn_qr": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "turn_ql": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "turn_back": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "expr_open": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "expr_blink": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "expr_wide": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "expr_happy": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "expr_soft": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "expr_squint": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "expr_lookL": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "expr_lookR": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "expr_lookU": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "sit": {
+  "front": true,
+  "cx": 108,
+  "by": 69
+ },
+ "sit_lookup": {
+  "front": true,
+  "cx": 108,
+  "by": 69
+ },
+ "sit_lean": {
+  "front": true,
+  "cx": 108,
+  "by": 69
+ },
+ "place1": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "place2": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "turnL": {
+  "front": false,
+  "cx": 236,
+  "by": 80
+ },
+ "walk00": {
+  "front": false,
+  "cx": 235,
+  "by": 81
+ },
+ "walk01": {
+  "front": false,
+  "cx": 233,
+  "by": 83
+ },
+ "walk02": {
+  "front": false,
+  "cx": 232,
+  "by": 84
+ },
+ "walk03": {
+  "front": false,
+  "cx": 230,
+  "by": 86
+ },
+ "walk04": {
+  "front": false,
+  "cx": 229,
+  "by": 87
+ },
+ "walk05": {
+  "front": false,
+  "cx": 227,
+  "by": 88
+ },
+ "walk06": {
+  "front": false,
+  "cx": 226,
+  "by": 89
+ },
+ "walk07": {
+  "front": false,
+  "cx": 224,
+  "by": 90
+ },
+ "walk08": {
+  "front": false,
+  "cx": 222,
+  "by": 91
+ },
+ "walk09": {
+  "front": false,
+  "cx": 221,
+  "by": 92
+ },
+ "walk10": {
+  "front": false,
+  "cx": 219,
+  "by": 93
+ },
+ "walk11": {
+  "front": false,
+  "cx": 217,
+  "by": 94
+ },
+ "walk12": {
+  "front": false,
+  "cx": 215,
+  "by": 95
+ },
+ "walk13": {
+  "front": false,
+  "cx": 214,
+  "by": 96
+ },
+ "walk14": {
+  "front": false,
+  "cx": 212,
+  "by": 98
+ },
+ "walk15": {
+  "front": false,
+  "cx": 210,
+  "by": 99
+ },
+ "walk16": {
+  "front": false,
+  "cx": 208,
+  "by": 100
+ },
+ "walk17": {
+  "front": false,
+  "cx": 207,
+  "by": 101
+ },
+ "walk18": {
+  "front": false,
+  "cx": 205,
+  "by": 101
+ },
+ "walk19": {
+  "front": false,
+  "cx": 203,
+  "by": 101
+ },
+ "walk20": {
+  "front": false,
+  "cx": 201,
+  "by": 101
+ },
+ "walk21": {
+  "front": false,
+  "cx": 199,
+  "by": 101
+ },
+ "walk22": {
+  "front": false,
+  "cx": 197,
+  "by": 101
+ },
+ "walk23": {
+  "front": false,
+  "cx": 195,
+  "by": 101
+ },
+ "walk24": {
+  "front": false,
+  "cx": 193,
+  "by": 101
+ },
+ "walk25": {
+  "front": false,
+  "cx": 191,
+  "by": 101
+ },
+ "walk26": {
+  "front": false,
+  "cx": 189,
+  "by": 101
+ },
+ "walk27": {
+  "front": false,
+  "cx": 187,
+  "by": 101
+ },
+ "walk28": {
+  "front": false,
+  "cx": 185,
+  "by": 101
+ },
+ "walk29": {
+  "front": false,
+  "cx": 183,
+  "by": 101
+ },
+ "walk30": {
+  "front": false,
+  "cx": 181,
+  "by": 101
+ },
+ "walk31": {
+  "front": false,
+  "cx": 179,
+  "by": 101
+ },
+ "walk32": {
+  "front": false,
+  "cx": 177,
+  "by": 101
+ },
+ "walk33": {
+  "front": false,
+  "cx": 175,
+  "by": 101
+ },
+ "walk34": {
+  "front": false,
+  "cx": 173,
+  "by": 101
+ },
+ "walk35": {
+  "front": false,
+  "cx": 171,
+  "by": 101
+ },
+ "walk36": {
+  "front": false,
+  "cx": 169,
+  "by": 101
+ },
+ "walk37": {
+  "front": false,
+  "cx": 167,
+  "by": 101
+ },
+ "walk38": {
+  "front": false,
+  "cx": 165,
+  "by": 101
+ },
+ "walk39": {
+  "front": false,
+  "cx": 163,
+  "by": 101
+ },
+ "walk40": {
+  "front": false,
+  "cx": 161,
+  "by": 101
+ },
+ "walk41": {
+  "front": false,
+  "cx": 159,
+  "by": 101
+ },
+ "walk42": {
+  "front": false,
+  "cx": 157,
+  "by": 101
+ },
+ "walk43": {
+  "front": false,
+  "cx": 155,
+  "by": 101
+ },
+ "walk44": {
+  "front": false,
+  "cx": 153,
+  "by": 101
+ },
+ "walk45": {
+  "front": false,
+  "cx": 151,
+  "by": 101
+ },
+ "walk46": {
+  "front": false,
+  "cx": 149,
+  "by": 101
+ },
+ "walk47": {
+  "front": false,
+  "cx": 147,
+  "by": 101
+ },
+ "walk48": {
+  "front": false,
+  "cx": 145,
+  "by": 101
+ },
+ "walk49": {
+  "front": false,
+  "cx": 143,
+  "by": 101
+ },
+ "walk50": {
+  "front": false,
+  "cx": 141,
+  "by": 101
+ },
+ "walk51": {
+  "front": false,
+  "cx": 139,
+  "by": 101
+ },
+ "walk52": {
+  "front": false,
+  "cx": 137,
+  "by": 101
+ },
+ "walk53": {
+  "front": false,
+  "cx": 135,
+  "by": 101
+ },
+ "walk54": {
+  "front": false,
+  "cx": 133,
+  "by": 101
+ },
+ "walk55": {
+  "front": false,
+  "cx": 131,
+  "by": 101
+ },
+ "walk56": {
+  "front": false,
+  "cx": 129,
+  "by": 101
+ },
+ "walk57": {
+  "front": false,
+  "cx": 127,
+  "by": 101
+ },
+ "walk58": {
+  "front": false,
+  "cx": 125,
+  "by": 101
+ },
+ "walk59": {
+  "front": false,
+  "cx": 123,
+  "by": 101
+ },
+ "walk60": {
+  "front": false,
+  "cx": 121,
+  "by": 101
+ },
+ "walk61": {
+  "front": false,
+  "cx": 119,
+  "by": 101
+ },
+ "walk62": {
+  "front": false,
+  "cx": 117,
+  "by": 101
+ },
+ "walk63": {
+  "front": false,
+  "cx": 116,
+  "by": 100
+ },
+ "walk64": {
+  "front": false,
+  "cx": 116,
+  "by": 98
+ },
+ "walk65": {
+  "front": false,
+  "cx": 116,
+  "by": 96
+ },
+ "walk66": {
+  "front": false,
+  "cx": 116,
+  "by": 94
+ },
+ "walk67": {
+  "front": false,
+  "cx": 116,
+  "by": 92
+ },
+ "walk68": {
+  "front": false,
+  "cx": 116,
+  "by": 90
+ },
+ "walk69": {
+  "front": false,
+  "cx": 116,
+  "by": 88
+ },
+ "walk70": {
+  "front": false,
+  "cx": 116,
+  "by": 86
+ },
+ "arrive": {
+  "front": false,
+  "cx": 116,
+  "by": 84
+ },
+ "arrive_up": {
+  "front": false,
+  "cx": 116,
+  "by": 84
+ },
+ "hop_antic": {
+  "front": false,
+  "cx": 116,
+  "by": 84
+ },
+ "hop": {
+  "front": true,
+  "cx": 113,
+  "by": 74
+ },
+ "land": {
+  "front": true,
+  "cx": 108,
+  "by": 69
+ },
+ "sit_e": {
+  "front": true,
+  "cx": 108,
+  "by": 69
+ },
+ "sit_lookup_e": {
+  "front": true,
+  "cx": 108,
+  "by": 69
+ },
+ "sit_lean_e": {
+  "front": true,
+  "cx": 108,
+  "by": 69
+ },
+ "sit_idle0": {
+  "front": true,
+  "cx": 108,
+  "by": 69
+ },
+ "sit_idle1": {
+  "front": true,
+  "cx": 108,
+  "by": 69
+ },
+ "sit_idle2": {
+  "front": true,
+  "cx": 108,
+  "by": 69
+ },
+ "sit_idle3": {
+  "front": true,
+  "cx": 108,
+  "by": 69
+ },
+ "sit_breath": {
+  "front": true,
+  "cx": 108,
+  "by": 69
+ }
+}
